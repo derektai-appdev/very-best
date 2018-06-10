@@ -15,8 +15,19 @@
 
 
       <div class="form-group">
-        <%= f.label :cuisine_name_cont, "Cuisine name contains" %>
-        <%= f.text_field :cuisine_name_cont, :class => "form-control", :placeholder => "Cuisine name contains" %>
+        <%= f.label :cuisine_id_eq_any_, "Cuisine" %>
+        <% Cuisine.all.each do |cuisine| %>
+        
+          <div class="checkbox">
+            <label>
+              <input type="checkbox" name="q[cuisine_id_eq_any][]" id="q_cuisine_id_eq_any_" value="<%=cuisine.id%>" />
+              <%=cuisine.name%>
+            </label>
+          </div>
+        
+        <% end%>
+          
+
       </div>
 
 
