@@ -1,5 +1,6 @@
 <div class="container mt-4">
-  <div class="col-md-6">
+  <div class="row mt-2 justify-content-md-center">
+    <div class="col-md-6">
         <div class="card">
           <div class="card-header">
              <h4 class="card-title">
@@ -11,7 +12,7 @@
           </div>  
           
           <div class="card-body">
-            
+
             <div id="map" style="height: 360px;"></div>
               <script>
                 var map;
@@ -66,7 +67,7 @@
             <li class="list-group-item">
               <form action="/create_bookmark" class="form-inline float-left" method="post">
                 <!-- Hidden input for authenticity token to protect from forgery -->
-                <input name="authenticity_token" type="hidden" value="lQTwxw2+JgcMucGWzFK4b4LQhkFBVxjiPQnRuLreN1yDKqwkqQRJ0OOPAlrwBdYNWzf97u50Lqqat9iuctq+Uw==">
+                <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
     
                 <input type="hidden" name="venue_id" value="<%= @venue.id %>">
                 <input type="hidden" name="user_id" value="<%= current_user.id %>">
@@ -108,7 +109,7 @@
             <i class="fa fa-chevron-left"></i>
           </a>
         </div>
-      
+      </div>
     </div>
   </div>
 </div>
