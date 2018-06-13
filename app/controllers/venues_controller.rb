@@ -87,4 +87,5 @@ class VenuesController < ApplicationController
       redirect_back(:fallback_location => "/", :notice => "Venue deleted.")
     end
   end
+  
 end
