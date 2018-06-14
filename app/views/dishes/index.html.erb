@@ -10,7 +10,6 @@
           <%= f.text_field :name_cont, :class => "form-control", :placeholder => "Name contains" %>
         </div>
 
-
         <div class="form-group">
           <%= f.label :cuisine_id_eq_any_, "Cuisine" %>
           <% Cuisine.all.each do |cuisine| %>
@@ -51,10 +50,11 @@
               </td>
               
               <td>
-                <% if dish.bookmarks_count !=0 %>
-                  <a href="/venues/<%= Venue.find(dish.id).id %>">
-                    <%= Venue.find(dish.id).name %>
+                <% if Bookmark.where(user_id: current_user.id, dish_id: dish.id).size != 0 %>
+                  <a href="/venues/<%= Bookmark.find_by(user_id: current_user.id, dish_id: dish.id).venue_id %>">
+                    <%= Venue.find(Bookmark.find_by(user_id: current_user.id, dish_id: dish.id).venue_id).name %>
                   </a>
+
                 <% else %>
                   <form action="/create_bookmark" class="form-inline float-left" method="post">
                       <!-- Hidden input for authenticity token to protect from forgery -->
