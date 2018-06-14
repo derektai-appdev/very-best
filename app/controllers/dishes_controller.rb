@@ -1,6 +1,7 @@
 class DishesController < ApplicationController
   def index
     @q = Dish.ransack(params[:q])
+    # @my_bookmark = Bookmark.where(user_id: current_user.id)
     @dishes = @q.result(:distinct => true).includes(:cuisine, :bookmarks, :fans, :specialists).page(params[:page]).per(10)
 
     render("dishes/index.html.erb")
