@@ -19,11 +19,11 @@
                 function initMap() {
                   map = new google.maps.Map(document.getElementById('map'), {
                     center: {lat: <%= @venue.address_latitude %>, lng: <%= @venue.address_longitude %>},
-                    zoom: 10
+                    zoom: 15
                   });
                 }
               </script>
-              <script src="https://maps.googleapis.com/maps/api/js?key=4e34d4b1e904aef2d71a2b21a941953a&callback=initMap"
+              <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCOTPWiuvyyo6sKoIBzKA4-1ol-vTOIOlM&callback=initMap"
               async defer></script>
             </div>
           

@@ -10,8 +10,6 @@
                   <%= Cuisine.find(@dish.cuisine_id).name %>
                 </div>
               </h4>
-              
-              
           </div>  
           
           <li class="list-group-item">
@@ -22,13 +20,11 @@
                 <input type="hidden" name="dish_id" value="<%= @dish.id %>">
                 <input type="hidden" name="user_id" value="<%= current_user.id %>">
     
-                <!-- Label and input for dish_id -->
                 <div class="form-group mr-sm-1">
                   <label for="dish_id" class="control-label sr-only">
                     Dish
                   </label>
                   <%= select_tag("venue_id", options_from_collection_for_select(Venue.all, :id, :name), :class => "form-control") %>
-                  <!--<%= select_tag("dish_id", options_from_collection_for_select(Dish.all, :id, :name, @bookmark.try(:dish_id)), :class => "form-control") %>-->
                 </div>
     
                 <button class="btn btn-primary btn">

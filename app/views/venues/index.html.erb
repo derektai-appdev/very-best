@@ -4,10 +4,10 @@
       <%= search_form_for @q, :class => "collapse", :id => "venues_filters" do |f| %>
         <p class="lead">Narrow results:</p>
   
-      <div class="form-group">
-        <%= f.label :name_cont, "Name contains" %>
-        <%= f.text_field :name_cont, :class => "form-control", :placeholder => "Name contains" %>
-      </div>
+        <div class="form-group">
+          <%= f.label :name_cont, "Name contains" %>
+          <%= f.text_field :name_cont, :class => "form-control", :placeholder => "Name contains" %>
+        </div>
 
       
         <div class="form-group">
@@ -27,11 +27,11 @@
 
         <%= f.submit :class => "btn btn-primary btn-block mb-1" %>
 
-          <a href="/venues" class="btn btn-secondary btn-block mb-1">Clear filters</a>
-        <% end %>
-        <a class="btn btn-secondary btn-block mb-1" data-toggle="collapse" href="#venues_filters">
-            Show Filters
-        </a>
+        <a href="/venues" class="btn btn-secondary btn-block mb-1">Clear filters</a>
+      <% end %>
+      <a class="btn btn-secondary btn-block mb-1" data-toggle="collapse" href="#venues_filters">
+          Show Filters
+      </a>
     </div>
     
     
